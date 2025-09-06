@@ -19,10 +19,25 @@
     </button>
     <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item"><a class="nav-link" href="{{ route('clients.index') }}">Clients</a></li>
-        {{-- Add these later --}}
-        {{-- <li class="nav-item"><a class="nav-link" href="{{ route('products.index') }}">Products</a></li> --}}
-        {{-- <li class="nav-item"><a class="nav-link" href="{{ route('invoices.index') }}">Invoices</a></li> --}}
+        <li class="nav-item">
+          <a class="nav-link {{ request()->routeIs('clients.*') ? 'active' : '' }}" 
+             href="{{ route('clients.index') }}">
+            Clients
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ request()->routeIs('products.*') ? 'active' : '' }}" 
+             href="{{ route('products.index') }}">
+            Products
+          </a>
+        </li>
+        {{-- Later we’ll enable Invoices --}}
+        {{-- <li class="nav-item">
+          <a class="nav-link {{ request()->routeIs('invoices.*') ? 'active' : '' }}" 
+             href="{{ route('invoices.index') }}">
+            Invoices
+          </a>
+        </li> --}}
       </ul>
     </div>
   </div>
